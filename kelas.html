@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface-variant": "#56423e",
+                "inverse-surface": "#303030",
+                "inverse-on-surface": "#f3f0f0",
+                "on-tertiary-container": "#2b2c2a",
+                "on-primary-fixed-variant": "#802918",
+                "surface-container-low": "#f6f3f2",
+                "on-primary-container": "#5a0d02",
+                "background": "#fbf9f8",
+                "surface-container-highest": "#e4e2e1",
+                "on-background": "#1b1c1c",
+                "outline": "#89726d",
+                "surface-dim": "#dcd9d9",
+                "secondary-fixed": "#c8eeac",
+                "surface": "#fbf9f8",
+                "primary": "#9f402d",
+                "on-secondary-fixed-variant": "#304e1d",
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#939390",
+                "secondary-fixed-dim": "#add192",
+                "secondary": "#476733",
+                "tertiary": "#5e5e5c",
+                "tertiary-fixed": "#e4e2df",
+                "secondary-container": "#c8eeac",
+                "on-error": "#ffffff",
+                "surface-variant": "#e4e2e1",
+                "surface-tint": "#9f402d",
+                "surface-container-high": "#eae8e7",
+                "surface-container": "#f0eded",
+                "on-surface": "#1b1c1c",
+                "surface-bright": "#fbf9f8",
+                "on-tertiary-fixed-variant": "#474745",
+                "tertiary-fixed-dim": "#c8c6c4",
+                "primary-fixed": "#ffdad3",
+                "on-secondary-fixed": "#092100",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "outline-variant": "#ddc0ba",
+                "on-secondary-container": "#4d6d38",
+                "error-container": "#ffdad6",
+                "primary-fixed-dim": "#ffb4a5",
+                "primary-container": "#e2725b",
+                "on-tertiary-fixed": "#1b1c1a",
+                "on-primary-fixed": "#3e0500",
+                "surface-container-lowest": "#ffffff",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#ffb4a5",
+                "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1200px",
+                "margin-mobile": "20px",
+                "base": "8px",
+                "margin-desktop": "40px",
+                "section-gap": "80px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "label-sm": ["Inter"],
+                "display-lg": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "headline-sm": ["Montserrat"],
+                "label-md": ["Inter"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -10px rgba(51, 51, 51, 0.05);
+        }
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-sm dark:shadow-none h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">GenSa Fit</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="index.html">Tentang</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary font-label-md text-label-md" href="kelas.html">Kelas</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="pricing.html">Harga</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="pricing.html#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="https://wa.me/6281223982073" target="_blank" class="hidden sm:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md active:scale-95 transition-transform duration-200">
+                Hubungi Admin
+            </a>
+<button id="menu-toggle" class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden-menu md:hidden flex flex-col p-8">
+<div class="flex justify-end mb-12">
+<button id="menu-close" class="text-primary p-2">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-8 text-center items-center">
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="index.html">Tentang</a>
+<a class="text-headline-md font-headline-md text-primary font-bold" href="kelas.html">Kelas</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="pricing.html">Harga</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="pricing.html#faq">FAQ</a>
+<a href="https://wa.me/6281223982073" target="_blank" class="mt-8 bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-sm shadow-lg shadow-primary/20">Hubungi Admin</a>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Header -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="text-center max-w-2xl mx-auto">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-sm text-label-sm mb-4">Pilih Energimu</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">Kelas Kebugaran Wanita</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Temukan ruang aman untuk tumbuh, bergerak, dan berkembang bersama komunitas yang mendukung perjalanan kesehatan Anda.</p>
+</div>
+</section>
+<!-- Classes Gallery -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pilates Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden soft-shadow flex flex-col group">
+<div class="h-64 overflow-hidden">
+<img alt="Pilates session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene indoor pilates studio bathed in soft morning sunlight. A focused woman in minimalist athletic wear performs a controlled movement on a light wood floor. The atmosphere is peaceful, featuring a palette of cream, soft terracotta, and sage green, embodying a high-end wellness sanctuary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDReftcNo0CTImcGPG82J7ZC6JVYiQTr6qip7t83qnvlswEAVjs9E3cM_EmwJ-kMchAkLGkndSM3LQUBuDTaLth1Eb1ZR7nAD-4HfBXOFnUqmIa2LSWcalnI-wj9Svp2USN-D-ra9nrdTP-XcuGTXbTbQBsYfgBotIEsHHaAzfoeSxjRlcRId3amkUIUrEz9-WHlXPdgoWvEI0boqvzRWon6T-WsqrLFx9pPXAfwNmPaNb8AaSlBqmMT3bNvoyb1_WdHLgCBBymiotN"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pilates</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 flex-grow">Fokus pada kekuatan inti dan fleksibilitas melalui gerakan terkontrol yang harmonis.</p>
+<button class="w-full border border-secondary text-secondary font-label-md py-3 rounded-lg hover:bg-secondary-container transition-colors">Lihat Jadwal</button>
+</div>
+</div>
+<!-- Yoga Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden soft-shadow flex flex-col group">
+<div class="h-64 overflow-hidden">
+<img alt="Yoga session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tranquil yoga setting with a woman in a gentle pose. The room has large windows showing soft greenery outside, with warm, diffused sunlight filling the space. The visual style is airy and minimal, utilizing light terracotta accents and natural materials to create a sense of calm and safety." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8DzqaD5xMwBBKtaoLnYRtZxzgMwB0QHOkcCqS4lL8NKRLwDx73Xev0k6vTXUElsIna2spiRcRlvBU42kiGSRTstzzGpZxBkpWxzOSIBd8wPdn3jz_s-DZClrVBLHHj3cj436FduUUGMwYUMJBWmiOy_1gWWb2bgyJj6C3yAR7BnHKCApiGYBTWtzxK1M9sbdP1wUCHdYwWlCit8M_YmdUOqx7L7Jrc88lfo4fOREQJ3KsJQNVSbb4IfERNYHKoETVJVmB8T7nWeNe"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Yoga</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="self_improvement">self_improvement</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 flex-grow">Keseimbangan antara pikiran dan tubuh. Sesi yang menenangkan untuk mengurangi stres harian.</p>
+<button class="w-full border border-secondary text-secondary font-label-md py-3 rounded-lg hover:bg-secondary-container transition-colors">Lihat Jadwal</button>
+</div>
+</div>
+<!-- Gym Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden soft-shadow flex flex-col group">
+<div class="h-64 overflow-hidden">
+<img alt="Gym session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A woman wearing a hijab exercises on a treadmill in a modern, bright gym filled with high-quality equipment." src="premium_photo-1664301423867-f4d148a0c14b.jpg"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Gym</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="fitness_center">fitness_center</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 flex-grow">Akses alat gym lengkap untuk melatih kekuatan dan pembentukan tubuh dengan nyaman.</p>
+<a href="https://wa.me/6281223982073" target="_blank" class="w-full border border-secondary text-secondary font-label-md py-3 rounded-lg hover:bg-secondary-container transition-colors text-center inline-block">Lihat Jadwal</a>
+</div>
+</div>
+<!-- Zumba Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden soft-shadow flex flex-col group">
+<div class="h-64 overflow-hidden">
+<img alt="Zumba session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A joyful and vibrant Zumba class for women. The scene is filled with authentic smiles and dynamic movement. The interior design of the studio is modern and minimalist, featuring soft peach and terracotta wall accents that glow under warm, professional studio lighting. The vibe is celebratory and welcoming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmi6vEzTwIBmIVnZRyjyTmkvBytzP-1fxk3xfSnFX2bj5LOAwFEjMX_c_67ObAjU75t_aiC2ZkmyuZRW7ylLIQKP3B9Q6Be3cP7D1zFkxFUGMIEQb8IjjhCopYrOE3tgYUIRJkjvoyb51keVKhZcTyvwwDhwAJ9a3j_FfD1i6NxJK3OJSDTtE4FYKAVgT6ncwWvtglTJ3QQSCFzpZ2XpcqBo31Mf9gc9b4oBcMEbeOVBCtJv4wF2s1yizx3g5WlRhAPwexQA_S6wF"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Zumba</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="music_note">music_note</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 flex-grow">Ekspresikan diri melalui tarian yang menyenangkan dan penuh energi bersama teman-teman.</p>
+<button class="w-full border border-secondary text-secondary font-label-md py-3 rounded-lg hover:bg-secondary-container transition-colors">Lihat Jadwal</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Weekly Schedule -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<div class="bg-surface-container-low rounded-2xl p-8 md:p-12">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Jadwal Mingguan</h2>
+<p class="text-on-surface-variant">Pilih waktu yang tepat untuk dirimu sendiri.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md">Pagi</button>
+<button class="bg-white text-on-surface-variant border border-outline-variant px-6 py-2 rounded-lg font-label-md hover:bg-surface-container transition-colors">Sore</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Waktu</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Senin</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Selasa</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Rabu</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Kamis</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Jumat</th>
+<th class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">Sabtu</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr>
+<td class="py-6 px-4 font-label-md text-primary">08:00</td>
+<td class="py-6 px-4"><span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm">Yoga</span></td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm">Pilates</span></td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm">Yoga</span></td>
+<td class="py-6 px-4"><span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm">Gym</span></td>
+</tr>
+<tr>
+<td class="py-6 px-4 font-label-md text-primary">09:30</td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm">Gym</span></td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm">Zumba</span></td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm">Yoga</span></td>
+</tr>
+<tr>
+<td class="py-6 px-4 font-label-md text-primary">11:00</td>
+<td class="py-6 px-4"><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm">Pilates</span></td>
+<td class="py-6 px-4">-</td>
+<td class="py-6 px-4"><span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm">Zumba</span></td>
+<td class="py-6 px-4"><span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm">Yoga</span></td>
+<td class="py-6 px-4"><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm">Pilates</span></td>
+<td class="py-6 px-4">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="relative rounded-2xl overflow-hidden bg-primary py-16 px-8 text-center text-on-primary">
+<div class="relative z-10 max-w-xl mx-auto">
+<h2 class="font-headline-md text-headline-md mb-4">Siap untuk Memulai?</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">Dapatkan konsultasi gratis dengan instruktur kami untuk menemukan kelas yang paling sesuai dengan tujuan kesehatanmu.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="https://wa.me/6281223982073" target="_blank" class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-surface-container transition-colors inline-block">Daftar Sekarang</a>
+<a href="https://wa.me/6281223982073" target="_blank" class="bg-transparent border border-white/40 text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors inline-block">Hubungi Kami</a>
+</div>
+</div>
+<!-- Abstract decorative shapes -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary-container/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary dark:bg-on-secondary-fixed-variant w-full rounded-t-xl">
+<div class="flex flex-col items-center text-center py-section-gap px-margin-mobile md:px-margin-desktop w-full">
+<div class="font-headline-sm text-headline-sm font-bold text-on-secondary mb-8">GenSa Fit</div>
+<div class="flex gap-6 mb-10">
+<a class="text-on-secondary/80 font-body-md hover:text-secondary-container transition-colors" href="https://wa.me/6281223982073" target="_blank">WhatsApp</a>
+<a class="text-on-secondary/80 font-body-md hover:text-secondary-container transition-colors" href="https://www.instagram.com/daffa.march/?next=%2F&hl=id" target="_blank">Instagram</a>
+</div>
+<p class="text-on-secondary/60 font-body-md mb-4">© 2024 GenSa Fit Baleendah. Nurturing Strength.</p>
+<div class="flex items-center gap-2 text-on-secondary/40 font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span>Baleendah, Kabupaten Bandung, Jawa Barat</span>
+</div>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden-menu');
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden-menu');
+    });
+
+    // Close menu when clicking links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden-menu');
+        });
+    });
+</script>
+</body>
+</html>
