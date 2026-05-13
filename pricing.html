@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#56423e",
+                    "inverse-surface": "#303030",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-tertiary-container": "#2b2c2a",
+                    "on-primary-fixed-variant": "#802918",
+                    "surface-container-low": "#f6f3f2",
+                    "on-primary-container": "#5a0d02",
+                    "background": "#fbf9f8",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-background": "#1b1c1c",
+                    "outline": "#89726d",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-fixed": "#c8eeac",
+                    "surface": "#fbf9f8",
+                    "primary": "#9f402d",
+                    "on-secondary-fixed-variant": "#304e1d",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#939390",
+                    "secondary-fixed-dim": "#add192",
+                    "secondary": "#476733",
+                    "tertiary": "#5e5e5c",
+                    "tertiary-fixed": "#e4e2df",
+                    "secondary-container": "#c8eeac",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "surface-tint": "#9f402d",
+                    "surface-container-high": "#eae8e7",
+                    "surface-container": "#f0eded",
+                    "on-surface": "#1b1c1c",
+                    "surface-bright": "#fbf9f8",
+                    "on-tertiary-fixed-variant": "#474745",
+                    "tertiary-fixed-dim": "#c8c6c4",
+                    "primary-fixed": "#ffdad3",
+                    "on-secondary-fixed": "#092100",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#ddc0ba",
+                    "on-secondary-container": "#4d6d38",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb4a5",
+                    "primary-container": "#e2725b",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "on-primary-fixed": "#3e0500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb4a5",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "margin-desktop": "40px",
+                    "section-gap": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -10px rgba(51, 51, 51, 0.05);
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">GenSa Fit</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="tentang.html">Tentang</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="index.html">Kelas</a>
+<a id="nav-harga" class="nav-link font-label-md text-label-md text-primary font-bold border-b-2 border-primary" href="pricing.html">Harga</a>
+<a id="nav-faq" class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="https://wa.me/6281223982073" target="_blank" class="hidden sm:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md active:scale-95 transition-transform duration-200 inline-block">
+                Hubungi Admin
+            </a>
+<button id="menu-toggle" class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface z-[60] hidden-menu md:hidden flex flex-col p-8">
+<div class="flex justify-end mb-12">
+<button id="menu-close" class="text-primary">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-6 text-center">
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="tentang.html">Tentang</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="index.html">Kelas</a>
+<a class="text-headline-md font-headline-md text-primary font-bold" href="pricing.html">Harga</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="#faq">FAQ</a>
+<a href="https://wa.me/6281223982073" target="_blank" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-xl font-headline-sm">Hubungi Admin</a>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Investasi Untuk Dirimu</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Pilih paket membership yang paling sesuai dengan ritme hidupmu. Temukan ketenangan dan kekuatan dalam komunitas yang mendukung setiap langkahmu.
+            </p>
+</section>
+<!-- Pricing Cards -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Bulanan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow flex flex-col border border-surface-variant/50">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Fleksibel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Bulanan</h3>
+<div class="mb-8">
+<span class="font-display-lg text-headline-md text-primary">Rp 350.000</span>
+<span class="text-on-surface-variant font-body-md">/bulan</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Akses Alat Gym Lengkap</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Semua Kelas Studio</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">cancel</span>
+<span class="text-outline">Loker Pribadi</span>
+</li>
+</ul>
+<a href="https://wa.me/6281223982073" target="_blank" class="w-full py-4 rounded-lg border-2 border-secondary text-secondary font-label-md hover:bg-secondary hover:text-on-secondary transition-colors text-center inline-block">
+                        Pilih Paket
+                    </a>
+</div>
+<!-- 3 Bulan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow flex flex-col border-2 border-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-4 py-1 rounded-bl-lg font-label-sm">POPULER</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Komitmen Ringan</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">3 Bulan</h3>
+<div class="mb-8">
+<span class="font-display-lg text-headline-md text-primary">Rp 900.000</span>
+<span class="text-on-surface-variant font-body-md">/paket</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface-variant">Akses Alat Gym Lengkap</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface-variant">Semua Kelas Studio</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface-variant">Loker Pribadi</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface-variant">Konsultasi Coach (1x)</span>
+</li>
+</ul>
+<a href="https://wa.me/6281223982073" target="_blank" class="w-full py-4 rounded-lg bg-primary text-on-primary font-label-md hover:opacity-90 transition-opacity text-center inline-block">
+                        Daftar Sekarang
+                    </a>
+</div>
+<!-- 6 Bulan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl soft-shadow flex flex-col border border-surface-variant/50">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Hemat Maksimal</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">6 Bulan</h3>
+<div class="mb-8">
+<span class="font-display-lg text-headline-md text-primary">Rp 1.600.000</span>
+<span class="text-on-surface-variant font-body-md">/paket</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Akses Alat Gym Lengkap</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Semua Kelas Studio</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Loker Pribadi Eksklusif</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Konsultasi Coach Bulanan</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Diskon Merchandise 15%</span>
+</li>
+</ul>
+<a href="https://wa.me/6281223982073" target="_blank" class="w-full py-4 rounded-lg border-2 border-secondary text-secondary font-label-md hover:bg-secondary hover:text-on-secondary transition-colors text-center inline-block">
+                        Pilih Paket
+                    </a>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-center text-primary mb-12">Bandingkan Keuntungan</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="text-left border-b-2 border-surface-variant">
+<th class="py-6 px-4 font-headline-sm text-headline-sm text-on-surface min-w-[200px]">Fitur &amp; Benefit</th>
+<th class="py-6 px-4 font-label-md text-label-md text-center">Bulanan</th>
+<th class="py-6 px-4 font-label-md text-label-md text-center text-primary">3 Bulan</th>
+<th class="py-6 px-4 font-label-md text-label-md text-center">6 Bulan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant/30">
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Akses Alat Gym</td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Semua Kelas Studio</td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Loker Pribadi</td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-outline">horizontal_rule</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Konsultasi Coach</td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-outline">horizontal_rule</span></td>
+<td class="py-5 px-4 text-center text-body-md">1x Sesi</td>
+<td class="py-5 px-4 text-center text-body-md">Sesi Bulanan</td>
+</tr>
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Diskon Merchandise</td>
+<td class="py-5 px-4 text-center"><span class="material-symbols-outlined text-outline">horizontal_rule</span></td>
+<td class="py-5 px-4 text-center text-body-md">5%</td>
+<td class="py-5 px-4 text-center text-body-md">15%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 text-on-surface-variant">Guest Pass (Per Bulan)</td>
+<td class="py-5 px-4 text-center text-body-md">-</td>
+<td class="py-5 px-4 text-center text-body-md">1 Tiket</td>
+<td class="py-5 px-4 text-center text-body-md">3 Tiket</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FAQ Section -->
+<section id="faq" class="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop scroll-mt-24">
+<h2 class="font-headline-md text-headline-md text-center text-primary mb-12">Pertanyaan Populer</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-low p-6 rounded-xl border border-surface-variant/30 open:bg-surface-container">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm text-on-surface">Apakah ada biaya pendaftaran (Joining Fee)?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">
+                        Untuk member baru, terdapat biaya administrasi satu kali sebesar Rp 100.000 untuk pembuatan kartu member dan starter kit.
+                    </p>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl border border-surface-variant/30 open:bg-surface-container">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm text-on-surface">Bisakah saya membekukan (freeze) membership?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">
+                        Ya, untuk paket 3 dan 6 bulan, Anda dapat membekukan membership hingga 30 hari jika sedang bepergian atau sakit dengan menunjukkan surat keterangan.
+                    </p>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl border border-surface-variant/30 open:bg-surface-container">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm text-on-surface">Apa saja yang harus saya bawa saat kunjungan pertama?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">
+                        Cukup bawa pakaian olahraga yang nyaman, sepatu indoor, dan botol minum. Kami menyediakan handuk kecil dan akses air minum di area studio.
+                    </p>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl border border-surface-variant/30 open:bg-surface-container">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm text-on-surface">Apakah kelas studio sudah termasuk dalam harga?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">
+                        Betul! Semua paket membership sudah termasuk akses tak terbatas ke seluruh kelas studio kami seperti Yoga, Zumba, dan Mat Pilates sesuai jadwal yang tersedia.
+                    </p>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary text-on-secondary w-full rounded-t-xl py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col items-center text-center max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-on-secondary mb-6">GenSa Fit</div>
+<div class="flex gap-6 mb-10">
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-body-md" href="https://wa.me/6281223982073" target="_blank">WhatsApp</a>
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-body-md" href="https://www.instagram.com/daffa.march/?next=%2F&hl=id" target="_blank">Instagram</a>
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-body-md" href="#">Facebook</a>
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-body-md" href="#">Maps</a>
+</div>
+<p class="font-body-md text-body-md opacity-70">© 2024 GenSa Fit Baleendah. Nurturing Strength.</p>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden-menu');
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden-menu');
+    });
+
+    // Close menu when clicking links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden-menu');
+        });
+    });
+
+    // Handle Active Nav Highlighting
+    function updateActiveNav() {
+        const hash = window.location.hash;
+        const navHarga = document.getElementById('nav-harga');
+        const navFaq = document.getElementById('nav-faq');
+        
+        const activeClasses = ['text-primary', 'font-bold', 'border-b-2', 'border-primary'];
+        const inactiveClasses = ['text-on-surface-variant', 'hover:text-primary-container'];
+
+        if (hash === '#faq') {
+            navHarga.classList.remove(...activeClasses);
+            navHarga.classList.add(...inactiveClasses);
+            
+            navFaq.classList.remove(...inactiveClasses);
+            navFaq.classList.add(...activeClasses);
+        } else {
+            navFaq.classList.remove(...activeClasses);
+            navFaq.classList.add(...inactiveClasses);
+
+            navHarga.classList.remove(...inactiveClasses);
+            navHarga.classList.add(...activeClasses);
+        }
+    }
+
+    window.addEventListener('hashchange', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+</script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GenSa Fit | Ruang Aman Kamu untuk Menjadi Lebih Kuat</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3e0500",
+                        "primary-container": "#e2725b",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "on-tertiary-fixed": "#1b1c1a",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb4a5",
+                        "on-secondary-container": "#4d6d38",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#ddc0ba",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#092100",
+                        "primary-fixed": "#ffdad3",
+                        "tertiary-fixed-dim": "#c8c6c4",
+                        "on-tertiary-fixed-variant": "#474745",
+                        "surface-bright": "#fbf9f8",
+                        "surface-variant": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae8e7",
+                        "surface-tint": "#9f402d",
+                        "secondary-container": "#c8eeac",
+                        "tertiary-fixed": "#e4e2df",
+                        "secondary": "#476733",
+                        "tertiary": "#5e5e5c",
+                        "secondary-fixed-dim": "#add192",
+                        "tertiary-container": "#939390",
+                        "secondary-fixed": "#c8eeac",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary": "#ffffff",
+                        "primary": "#9f402d",
+                        "surface": "#fbf9f8",
+                        "on-secondary-fixed-variant": "#304e1d",
+                        "on-background": "#1b1c1c",
+                        "outline": "#89726d",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-container": "#2b2c2a",
+                        "on-primary-fixed-variant": "#802918",
+                        "on-surface-variant": "#56423e",
+                        "inverse-surface": "#303030",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-primary-container": "#5a0d02",
+                        "background": "#fbf9f8",
+                        "surface-container-low": "#f6f3f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "headline-sm": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -20px rgba(51, 51, 51, 0.08);
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(251, 249, 248, 0.95), rgba(251, 249, 248, 0.6), transparent);
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a href="index.html" class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">GenSa Fit</span>
+</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md transition-colors" href="tentang.html">Tentang</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="index.html">Kelas</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="pricing.html">Harga</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="pricing.html#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="https://wa.me/6281223982073" target="_blank" class="hidden sm:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all inline-block">
+                Hubungi Admin
+            </a>
+<button id="menu-toggle" class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface z-[60] hidden-menu md:hidden flex flex-col p-8">
+<div class="flex justify-end mb-12">
+<button id="menu-close" class="text-primary">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-6 text-center">
+<a class="text-headline-md font-headline-md text-primary font-bold" href="tentang.html">Tentang</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="index.html">Kelas</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="pricing.html">Harga</a>
+<a class="text-headline-md font-headline-md text-on-surface-variant" href="pricing.html#faq">FAQ</a>
+<a href="https://wa.me/6281223982073" target="_blank" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-xl font-headline-sm">Hubungi Admin</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Yoga Studio" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq5ky_1La9k13jWW22amYBVTOsifo7rE22HxyJhYUkUyyVtT7l_P0lAkGBwP_ml0E8Kwq9KkzDntuzrgyz_GQDZTIVF0BAlBOPWj1SSFvFfaYqzCMhrLahNIZRIeMUxguo-xyiBzodF4n9fnI_5tvp-0oOz_OF7ryY1NKV_DUzWOcvow_2ERSFCMF9otKFmIkHDpmAxAzXx1N04cyVc-9vjb3hrjrOz8ix4dPs5JPEQb_vjEItUGxlHMYCbiXhEwubG6ULonExtwW9"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-6">
+                    TEMPAT GYM KHUSUS WANITA
+                </span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                    Ruang Aman Kamu untuk Menjadi Lebih Kuat.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Gym Khusus Wanita No. 1 di Baleendah. Nikmati privasi terjamin dan kenyamanan utama dalam setiap gerakanmu.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all active:scale-95">
+                        Ambil Free Trial
+                    </button>
+<button class="border-2 border-secondary text-secondary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-all">
+                        Lihat Jadwal Kelas
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Mengapa GenSa Fit?</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Benefit 1 -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center group hover:bg-white transition-all duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-6 text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="lock">lock</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">100% Khusus Wanita</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Latihan tenang tanpa risih. Area steril dari pria, memberikan kebebasan penuh untuk berekspresi.
+                    </p>
+</div>
+<!-- Benefit 2 -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center group hover:bg-white transition-all duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-6 text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="favorite">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Kelas Variatif</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Dari Pilates, Yoga, hingga Gym. Dipandu coach berpengalaman yang memahami tubuh wanita.
+                    </p>
+</div>
+<!-- Benefit 3 -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center group hover:bg-white transition-all duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-6 text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Komunitas Suportif</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Temukan teman baru dan saling dukung dalam perjalanan fitnesmu di lingkungan yang hangat.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visi & Misi Section -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-6">Visi & Misi Kami</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        GenSa Fit hadir dengan tujuan menciptakan lingkungan yang aman dan memberdayakan bagi setiap wanita di Baleendah untuk mencapai potensi terbaik mereka.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Pemberdayaan Wanita</h4>
+<p class="font-body-md text-on-surface-variant">Mendukung wanita untuk merasa kuat dan percaya diri melalui kebugaran.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Privasi Terjamin</h4>
+<p class="font-body-md text-on-surface-variant">Menyediakan ruang latihan 100% khusus wanita yang nyaman dan privat.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden soft-shadow h-[400px]">
+<img alt="Gym Interior" class="w-full h-full object-cover" src="premium_photo-1664301423867-f4d148a0c14b.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-2">Kata Mereka</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Bergabunglah dengan ratusan wanita hebat lainnya.</p>
+</div>
+<div class="bg-white px-6 py-4 rounded-xl soft-shadow flex items-center gap-4">
+<div class="flex text-[#FFD700]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold">5.0 Rating</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">on Google Maps</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-xl soft-shadow italic relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-6xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface mb-8 relative z-10">
+                        "Tempat gym perempuan yg worth it bgt daerah bansel love ✨. Coaches super ramah dan lingkungannya bikin betah lama-lama latihan."
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a smiling young woman with a natural look, set against a soft blurred background in warm daylight, reflecting a peaceful and confident mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoL4vs0mp9yOquuOmLKXBGJbkR5GUrEcpqQO8pFWz3Cs6-9cPesHtIfil93tLloqqNb37KcPinBSyct-DuzhmexYuKU_ZEDGIG4DZgJevoARZ8FZg181nMQhtH3Z-ENM7C_IyPvj13y5hlpdOdybVM4dKaxs2rxGS__L5tLEZRVx7HgQ19Ve_iN2Dl8brrq19KPORIAlHzLg_ztlmzsa-I6bdwcxWrjhAHuBumknvyNJizw33mysNMoet7wDmAvHCTQ_e0RNG1R0TJ"/>
+<div>
+<p class="font-label-md text-label-md font-bold">Sari Rahayu</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Member sejak 2023</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-xl soft-shadow italic relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-6xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface mb-8 relative z-10">
+                        "Senang banget akhirnya ada gym yang nyaman dan privat begini di Baleendah. Gak perlu lagi merasa canggung kalau mau angkat beban."
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A close-up portrait of a cheerful woman with a bright smile, captured in soft, natural morning light that enhances her glowing skin and the warm, welcoming atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4i3Kmeq1eT-1IoAwxVvjicmuloDUzQNgsb3SPjHl8tfVXvuzBxiOkp1pYZiHpBaJQEM5FMvy5haXRc7_3xnl28t_4jZBlMCFeqAGpSyJ9mRnPYsnXtCOyR3ZJ3e68WokdsjG0RJTIC56Olvv1OIhBrVF_fEJoueZqPt-92T0QiAKUaMqfLSlnasavEZpzRTbc65BRmI6y682X8g0FL6ita2yM2QBEb7U1ZDzzvieCsPum8mGen9ukBd-PvZrtbzf-OR5fDbWcVmdp"/>
+<div>
+<p class="font-label-md text-label-md font-bold">Indah Permata</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Member Pilates</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-xl soft-shadow italic relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-6xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface mb-8 relative z-10">
+                        "Coach-nya sangat membantu buat pemula kayak aku. Program latihannya disesuaikan sama kondisi badan. Sangat merekomendasikan!"
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a young woman with a serene expression, looking directly at the camera with gentle lighting that creates a soft, modern aesthetic in a light-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-fKvBd4P7ltxAagsuO8yoKSqCsoTm8YN0eL1K_4uWpvGY5wJX-J0pGICkYZbejAQ5nmFMUdueR-PooBiswicZ3avXtPm3f2lq8Lr5J7u7rC37-xUHBeAczenEiAEw7u_bRjjKa446c79CbtOibn2cEf80ytmc9bPifneI90I8bc0ClGKcPCP49aDkqpNMf4dj641qUisaaxOu4PW8oj3CEQ-M0d6DGecz4MtQ-iWdSmXtyDgzdYOSepwQcg3v_kal0E9GF2GHyBL"/>
+<div>
+<p class="font-label-md text-label-md font-bold">Maya Kartika</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Member HIIT</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap bg-on-secondary-fixed-variant text-on-secondary overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12 bg-secondary/20 p-12 rounded-3xl backdrop-blur-sm border border-white/10">
+<div class="max-w-xl text-center md:text-left">
+<h2 class="font-display-lg-mobile text-display-lg-mobile mb-4">Siap Mulai Hidup Sehat?</h2>
+<p class="font-body-lg text-body-lg text-white/80 mb-0">
+                        Konsultasikan tujuan fitnesmu secara gratis dengan admin kami. Mari bergabung dengan komunitas wanita terkuat di Baleendah.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="https://wa.me/6281223982073" target="_blank" class="bg-[#25D366] text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm flex items-center gap-3 hover:opacity-90 active:scale-95 transition-all inline-block">
+<span class="material-symbols-outlined" data-icon="chat">chat</span> Tanya Jadwal via WA
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-secondary text-on-secondary w-full rounded-t-xl">
+<div class="flex flex-col items-center text-center py-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="mb-12">
+<div class="font-headline-sm text-headline-sm font-bold text-on-secondary mb-4">GenSa Fit</div>
+<p class="font-body-md text-body-md text-on-secondary/80 max-w-md mx-auto">
+                    Baleendah, Bandung, Jawa Barat.<br/>
+                    Nurturing Strength, Empowering Women.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-12">
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-label-md text-label-md" href="https://wa.me/6281223982073" target="_blank">WhatsApp</a>
+<a class="text-on-secondary/80 hover:text-secondary-container transition-colors font-label-md text-label-md" href="https://www.instagram.com/daffa.march/?next=%2F&hl=id" target="_blank">Instagram</a>
+</div>
+<div class="w-full h-[1px] bg-white/10 mb-8"></div>
+<p class="font-label-sm text-label-sm text-on-secondary/60">
+                © 2024 GenSa Fit Baleendah. Nurturing Strength.
+            </p>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden-menu');
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden-menu');
+    });
+
+    // Close menu when clicking links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden-menu');
+        });
+    });
+</script>
+</body>
+</html>
