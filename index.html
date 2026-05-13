@@ -109,14 +109,11 @@
             background: linear-gradient(to right, rgba(251, 249, 248, 0.95), rgba(251, 249, 248, 0.6), transparent);
         }
         #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            visibility: visible;
-            opacity: 1;
+            transition: transform 0.3s ease-in-out;
+            background-color: white !important;
         }
         #mobile-menu.hidden-menu {
             transform: translateX(100%);
-            visibility: hidden;
-            opacity: 0;
         }
     </style>
 </head>
@@ -142,6 +139,7 @@
 </button>
 </div>
 </div>
+</nav>
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden-menu md:hidden flex flex-col p-8 overflow-y-auto">
 <div class="flex justify-end mb-12">
@@ -157,7 +155,6 @@
 <a href="https://wa.me/6281223982073" target="_blank" class="mt-8 bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-sm shadow-lg shadow-primary/20">Hubungi Admin</a>
 </div>
 </div>
-</nav>
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">

@@ -112,14 +112,11 @@
             color: #1b1c1c;
         }
         #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            visibility: visible;
-            opacity: 1;
+            transition: transform 0.3s ease-in-out;
+            background-color: white !important;
         }
         #mobile-menu.hidden-menu {
             transform: translateX(100%);
-            visibility: hidden;
-            opacity: 0;
         }
     </style>
 </head>
@@ -143,6 +140,7 @@
 </button>
 </div>
 </div>
+</nav>
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden-menu md:hidden flex flex-col p-8 overflow-y-auto">
 <div class="flex justify-end mb-12">
@@ -158,7 +156,6 @@
 <a href="https://wa.me/6281223982073" target="_blank" class="mt-8 bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-sm shadow-lg shadow-primary/20">Hubungi Admin</a>
 </div>
 </div>
-</nav>
 <main class="pt-32">
 <!-- Hero Header -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
