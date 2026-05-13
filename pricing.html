@@ -106,10 +106,14 @@
             box-shadow: 0 20px 40px -10px rgba(51, 51, 51, 0.05);
         }
         #mobile-menu {
-            transition: transform 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            visibility: visible;
+            opacity: 1;
         }
         #mobile-menu.hidden-menu {
             transform: translateX(100%);
+            visibility: hidden;
+            opacity: 0;
         }
     </style>
 </head>
@@ -135,7 +139,7 @@
 </div>
 </nav>
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden-menu md:hidden flex flex-col p-8">
+<div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden-menu md:hidden flex flex-col p-8 overflow-y-auto">
 <div class="flex justify-end mb-12">
 <button id="menu-close" class="text-primary p-2">
 <span class="material-symbols-outlined text-3xl">close</span>
